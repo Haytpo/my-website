@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+.card-menu {
+    display: inline-grid;
+    grid-auto-rows: auto;
+    gap: 4px;
+    overflow: visible;
+    max-width: 100%;
+}
+
+.left-scroll {
+    position: fixed;
+    margin-top: 58px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    z-index: 10;
+    background: #f8fafc;
+    padding: 15px 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transition: transform 0.3s ease;
+}
+.left-scroll::-webkit-scrollbar {
+    display: none;
+}
+ /* явно длиннее родителя */
+
+
+
+.card-header {
+    padding: 15px;
+    background: #3b82f6;
+    justify-self: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+}
+
+.card-description-content {
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.card.active .card-description {
+    max-height: 200px;
+}
+#contact-section {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 12px;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 11;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.left-scroll.collapsed {
+    transform: translateX(-320px);
+}
+
+
+.toggle-btn:hover {
+    background: #2563eb;
+}
+
+.toggle-btn.shifted {
+    left: 15px; /* Кнопка остаётся на месте */
+}
