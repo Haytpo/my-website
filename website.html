@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<title>Мой сайт</title>
+    <link rel="stylesheet" href="css/headerv3.css">
+    <link rel="stylesheet" href="css/17etazh.css">
+    <link rel="stylesheet" href="css/circle.css">
+    <link rel="stylesheet" href="css/contactv1.css">
+    <link rel="stylesheet" href="css/aboutv1.css">
+
+    <script src="scripts/circlev20.js" defer></script>
+    <script src="scripts/headerv3.js " defer></script>
+    <script src="scripts/sections.js" defer></script>
+    <script src="scripts/contactsv1.js" defer></script>
+    <script src="scripts/aboutv1.js" defer></script>
+    <script src="scripts/searchbase.js" defer></script>
+
+</head>
+<body>
+
+<div id="header" class="header">
+
+    <div class="header-buttons">
+        <button class="btn-hide-on-scroll">Extra</button>
+        <button class="btn" data-target="home-section">
+    <span class="btn-lg">
+        <span class="btn-sl"></span>
+        <span class="btn-sl2"></span>
+        <span class="btn-text">Main</span>
+    </span>
+        </button>
+        <button class="btn" data-target="about-section">about us</button>
+        <button class="btn" data-target="contact-section">Contacts</button>
+        <button class="btn" data-target="news-section">Library</button>
+        </div>
+    <div class="searcher">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+            <g>
+                <path
+                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                ></path>
+            </g>
+        </svg>
+        <input class="input" type="text" placeholder="search..">
+        <ul class="suggestions"></ul>
+    </div>
+</div>
+
+<div class="main-content">
+    <div id="home-section" class="section">
+        <div class="content-wrap">
+            <div class="up-block">
+                <p class="cont">main writting about that</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+            <div class="btn-log">
+                <button class="btn-wrap">
+                    <span class="btn-wrap-text">more⏬
+                    </span>
+                </button>
+                <button class="btn-wrap">
+                    <span class="btn-wrap-text">less⏫
+                    </span>
+                </button>
+            </div>
+
+            </div>
+
+            <img style="max-width: 100%"  src="images/bird.png" width="420" height="420" alt="Bird">
+
+            <div class="text-box">
+                <p>text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling</p>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="left-block">
+                <p class="cont">main writting about that</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+            </div>
+
+            <img style="max-width: 100%" src="images/bird.png" width="420" height="420" alt="Bird">
+
+            <div class="text-box">
+                <p>text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling</p>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="left-block">
+                <p class="cont">main writting about that</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+                <p>text-filling text-filling text-filling text-filling text-filling</p>
+            </div>
+
+
+            <div class="images-grid">
+                <img src="images/bird1.png" class="bird1"  data-description="Сойка — красивая птица семейства врановых. Отличается ярким оперением и способностью имитировать звуки.">
+                <img src="images/bird2.png" class="bird2" data-description="bird description bird descriptionbird description bird description bird descriptionbird description bird description bird description bird description">
+                <img src="images/bird3.png" class="bird3"  data-description="bird description">
+                <img src="images/bird4.png" class="bird4" data-description="bird description ">
+            </div>
+
+            <div class="text-box3">
+                <p id="bird-text">text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция "О нас" -->
+    <div id="about-section" class="section">
+        <div class="container">
+            <div class="menu" id="menu"></div>
+            <div class="text-section" id="textSection"></div>
+            <div class="image-section" id="imageSection"></div>
+        </div>
+    </div>
+    <div id="contact-section" class="section">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <div class="left-scroll collapsed">
+            <div id="card-menu" class="card-menu">
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="news-section" class="section">
+
+        <div class="news-section">
+            <div class="panel3" id="panel3">
+                <div class="panel3-content">
+                    <h2>Select folder</h2>
+                    <div class="card-menu3" id="cardMenu3"></div>
+                </div>
+                <button class="toggle-btn3" id="toggleBtn3">☰</button>
+            </div>
+
+
+            <div class="wheel-container">
+                <h1 class="title">🐦 Select bird</h1>
+
+                <div class="center-indicator"></div>
+
+                <div class="wheel-wrapper" id="wheelWrapper">
+                    <div class="wheel" id="wheel">
+                        <div class="item" data-id="1">
+                        <img src="images/egret.svg" width="100" height="100" draggable="false">
+                        <div class="item-title">Chinese Egret</div>
+                        <div class="item-price">Rare coastal wading bird</div>
+                    </div>
+
+                        <div class="item" data-id="2">
+                            <img src="images/lapwing.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Lapwing</div>
+                            <div class="item-price">Crested, noisy ground bird</div>
+                        </div>
+
+                        <div class="item" data-id="3">
+                            <img src="images/colibri.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Colibri</div>
+                            <div class="item-price">Most little bird</div>
+                        </div>
+
+                        <div class="item" data-id="4">
+                            <img src="images/seriema.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Crested Seriema</div>
+                            <div class="item-price">Long-legged ground bird</div>
+                        </div>
+
+                        <div class="item" data-id="5">
+                            <img src="images/swallow.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Tree swallow</div>
+                            <div class="item-price">Graceful blue and white flier</div>
+                        </div>
+
+                        <div class="item" data-id="6">
+                            <img src="images/nightjar.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Nightjar</div>
+                            <div class="item-price">Moth-catching night flyer</div>
+                        </div>
+
+                        <div class="item" data-id="7">
+                            <img src="images/vulture.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Black vulture</div>
+                            <div class="item-price">Scavenger with superb eyesight</div>
+                        </div>
+
+                        <div class="item" data-id="8">
+                            <img src="images/runner.svg" width="100" height="100" draggable="false">
+                            <div class="item-title">Greater roadrunner</div>
+                            <div class="item-price">Iconic running desert bird</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="info-panel" id="infoPanel">
+                <div class="info-content" id="infoContent">
+                    <div class="info-content-column-1">
+                    <div class="info-image">
+                        <img id="infoBirdImage" src="" alt="Bird">
+                    </div>
+                        <div class="button-group">
+                            <button class="btn-l">
+                                <span class="btn-lin">back</span>
+                            </button>
+                            <button class="btn-r">
+                                <span class="btn-lin">next</span>
+                            </button>
+                        </div>
+                        <div class="button-group">
+                            <button class="btn-l">
+                                <span class="btn-lin">share</span>
+                            </button>
+                            <button class="btn-r">
+                                <span class="btn-lin">save</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="info-details">
+                        <h2 class="info-title" id="infoBirdTitle">Select a bird</h2>
+                        <p class="info-subtitle" id="infoBirdSubtitle">Scroll to see details</p>
+                        <p class="info-description" id="infoBirdDescription">
+                            Choose any bird from the carousel above to learn more about its characteristics, habitat, and unique features.
+                        </p>
+                        <div class="info-stats" id="infoStats"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-wrap closed">
+                <div class="up-block">
+                    <div class="title-icon">
+                        <img class="tree" src="images/treehouse.svg">
+                        <p class="cont">main writting about that</p>
+                        <div class="btn-log">
+                            <button id="btn-tog" class="btn-wrap">
+                    <span  class="btn-wrap-text">more⏬
+                    </span>
+                            </button>
+                        </div>
+                        <p>text-filling text-filling text-filling text-filling text-filling</p>
+                        <p>text-filling text-filling text-filling text-filling text-filling</p>
+                    </div>
+
+
+                </div>
+
+                <img src="images/bird.png" width="420" height="420" alt="Bird">
+
+                <div class="text-box">
+                    <p>text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling text-filling</p>
+                </div>
+            </div>
+           </div>
+
+            </div>
+        </div>
+<script>
+
+    const newsWrap = document.querySelector('.news-wrap');
+    const btnToggle = document.getElementById('btn-tog');
+    const btnText = btnToggle.querySelector('.btn-wrap-text');
+
+    btnToggle.addEventListener('click', () => {
+        const isClosed = newsWrap.classList.toggle('closed');
+        btnText.textContent = isClosed ? 'more⏬' : 'less⏫';
+    });
+    // ------------------------
+    // 1. POPUP
+    // ------------------------
+    function initPopup() {
+        const popup = document.getElementById("popup");
+        const closeBtn = document.getElementById("close");
+
+        if (!popup || !closeBtn) return;
+
+        // Появление popup через 3 секунды
+        setTimeout(() => {
+            popup.style.display = "flex";
+            closeBtn.style.display = "none";
+
+            setTimeout(() => {
+                closeBtn.style.display = "flex";
+            }, 1000);
+        }, 3000);
+
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+
+            const aboutSection = document.getElementById('about-section');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    showPopup();
+                }
+            }, { threshold: 0.4 }); // когда ~40% секции будет видно
+
+            if (aboutSection) observer.observe(aboutSection);
+        });
+    }
+
+    // ------------------------
+    // 2. IMAGES GRID
+    // ------------------------
+    function initImagesGrid() {
+        const textElement = document.getElementById('bird-text');
+        if (!textElement) return;
+
+        document.querySelectorAll('.images-grid img').forEach(img => {
+            img.addEventListener('click', () => {
+                const newText = img.dataset.description;
+
+                textElement.classList.add('fade-out');
+
+                setTimeout(() => {
+                    textElement.textContent = newText;
+                    textElement.classList.remove('fade-out');
+                }, 200);
+            });
+        });
+    }
+
+    // ------------------------
+    // 3. SECTIONS
+    // ------------------------
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initPopup();
+        initImagesGrid();
+        initSections();
+    });
+
+</script>
+
+</body>
+</html>

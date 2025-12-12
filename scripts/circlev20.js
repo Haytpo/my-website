@@ -141,14 +141,22 @@ wrapper.addEventListener('mousemove', (e) => {
 // Touch support
 let touchStartX = 0;
 let touchStartScrollLeft = 0;
+let isTouchScrolling = false;
+let touchMoveCount = 0;
+
 
 wrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].pageX;
     touchStartScrollLeft = wrapper.scrollLeft;
+    isTouchScrolling = false;
+    touchMoveCount = 0;
     cancelMomentum();
 });
 
 wrapper.addEventListener('touchmove', (e) => {
+    touchMoveCount++;
+    isTouchScrolling = true;
+
     const touchX = e.touches[0].pageX;
     const walk = (touchStartX - touchX) * 1.5;
 
@@ -159,7 +167,10 @@ wrapper.addEventListener('touchmove', (e) => {
 });
 
 wrapper.addEventListener('touchend', () => {
-    applyMomentum();
+    if (isTouchScrolling && touchMoveCount > 3) {
+        applyMomentum();
+    }
+    isTouchScrolling = false;
 });
 
 // Momentum scrolling
@@ -392,20 +403,76 @@ items.forEach(item => {
         }, 400);
     });
 });
+let scrolledOnce = false;
 
-// Function to scroll page so info panel bottom touches screen bottom
 function scrollToInfoPanel() {
+    if (scrolledOnce) return;
+    scrolledOnce = true;
+
     const infoPanel = document.getElementById('infoPanel');
     const infoPanelRect = infoPanel.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Calculate how much to scroll to align bottom of info panel with bottom of screen
-    const scrollAmount = infoPanelRect.bottom - windowHeight +30;
+    const scrollAmount = infoPanelRect.bottom - windowHeight + 30;
 
     if (scrollAmount > 0) {
-        window.scrollBy({
-            top: scrollAmount,
-            behavior: 'smooth'
-        });
+        window.scrollBy({ top: scrollAmount, behavior: 'smooth' });
     }
+}
+////////////////////////////////PANEL
+// Функция для создания карточки
+const panel3 = document.getElementById('panel3');
+const toggleBtn3 = document.getElementById('toggleBtn3');
+const cardMenu3 = document.getElementById('cardMenu3');
+let isOpen3 = false;
+
+// Переключение панели
+toggleBtn3.addEventListener('click', () => {
+    isOpen3 = !isOpen3;
+
+    if (isOpen3) {
+        panel3.classList.add('open3');
+        toggleBtn3.classList.add('open3');
+        toggleBtn3.innerHTML = '✕';
+    } else {
+        panel3.classList.remove('open3');
+        toggleBtn3.classList.remove('open3');
+        toggleBtn3.innerHTML = '☰';
+    }
+});
+
+// Функция для создания карточки
+const createCard3 = (id, headerText, descriptionText) => {
+    const card = document.createElement('div');
+    card.className = 'card3';
+    card.id = id;
+
+    card.innerHTML = `
+                <div class="card-header3">
+                    ${headerText}
+                </div>
+                <div class="card-description3">
+                    <div class="card-description-content3">
+                        ${descriptionText}
+                    </div>
+                </div>
+            `;
+
+    // Добавляем обработчик клика СРАЗУ при создании
+    card.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active3');
+    });
+
+    return card;
+};
+
+// Создаём 20 карточек
+for (let i = 1; i <= 20; i++) {
+    const card = createCard3(
+        `card3-${i}`,
+        `Section № ${i}`,
+        `Description ${i}. Heres can be pasted any info, whatever You need.`
+    );
+    cardMenu3.appendChild(card);
 }

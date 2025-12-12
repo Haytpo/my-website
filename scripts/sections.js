@@ -3,11 +3,14 @@ function initSections() {
     const sections = document.querySelectorAll('.section');
     const buttons = document.querySelectorAll('.btn[data-target]');
     const header = document.querySelector('.header');
+    const input = document.querySelector('.input');
+    const suggestions = document.querySelector('.suggestions');
+    const searchIcon = document.querySelector('.search-icon');
 
     const backgrounds = {
         'home-section': "url('images/backgreen.png')",
         'about-section': "url('images/backrose.png')",
-        'contact-section': "url('images/backblue.png')",
+        'contact-section': "url('images/backblue2.png')",
         'news-section': "url('images/backorange.png')",
     };
     const headers = {
@@ -15,6 +18,30 @@ function initSections() {
         'about-section': "conic-gradient(from 225deg, #C7002FCC, #C900024D, #C800208C)",
         'contact-section': "conic-gradient(from 225deg, #00BCF1CC, #08B9FF4D, #00BBF88C)",
         'news-section': "conic-gradient(from 225deg, #FF998ACC, #FF9A7D4D, #FF9A848C)",
+    };
+    const inputStyles = {
+        'home-section': {
+            boxShadow: '0 0 0 2.0px #66e29a',
+            border: '2.0px solid #66e29a'
+        },
+        'about-section': {
+            boxShadow: '0 0 0 2.0px #ff6b9d',
+            border: '2.0px solid #ff6b9d'
+        },
+        'contact-section': {
+            boxShadow: '0 0 0 2.0px #00d4ff',
+            border: '2.0px solid #00d4ff'
+        },
+        'news-section': {
+            boxShadow: '0 0 0 2.0px #ffaa70',
+            border: '2.0px solid #ffaa70'
+        }
+    };
+    const suggestionStyles = {
+        'home-section': '#66e29a',
+        'about-section': '#ff6b9d',
+        'contact-section': '#00d4ff',
+        'news-section': '#ffaa70'
     };
 
 
@@ -48,6 +75,17 @@ function initSections() {
         if (backgrounds[targetId]) {
             document.body.style.backgroundImage = backgrounds[targetId];
         }
+        if (input && inputStyles[targetId]) {
+            input.style.boxShadow = inputStyles[targetId].boxShadow;
+        }
+        // Меняем стили suggestions
+        if (suggestions && suggestionStyles[targetId]) {
+            suggestions.style.borderColor = suggestionStyles[targetId];
+        }
+        if (searchIcon && suggestionStyles[targetId]) {
+            searchIcon.style.fill = suggestionStyles[targetId];
+        }
+
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }

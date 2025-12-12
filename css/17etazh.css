@@ -141,7 +141,7 @@ body {
     gap: 30px;
 }
 .main-content {
-    padding-top: 100px; /* Отступ для фиксированного header */
+    padding-top: 90px; /* Отступ для фиксированного header */
 }
 
 .content-wrap {
@@ -303,13 +303,3 @@ body {
     font-size: 20px;
 }
 
-.aboutinfo {
-    max-width: 800px;
-    background-color: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-}

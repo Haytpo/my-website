@@ -51,8 +51,8 @@ const createCard = (id, headerText, descriptionText) => {
 for (let i = 1; i <= 100; i++) {
     const card = createCard(
         `card-${i}`,
-        `Карточка ${i}`,
-        `Описание для карточки номер ${i}`
+        `card № ${i}`,
+        `description ${i}`
     );
     cardMenu.appendChild(card);
 }
@@ -60,7 +60,7 @@ for (let i = 1; i <= 100; i++) {
 // Изменяем описание 16-й карточки
 document.getElementById('card-16')
     .querySelector('.card-description-content')
-    .textContent = "Новое описание для карточки 16";
+    .textContent = "different desc 16";
 
 document.getElementById('card-6')
     .querySelector('.card-description-content')
